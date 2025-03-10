@@ -24,3 +24,9 @@ const userName = "Archibald";
 const greeting = "Hello " + "//enter your code here" + "!";
 
 console.log(greeting);
+
+if (SUPER_SECRET_PASSWORD === receivedPassword) {
+  console.log("Welcome! You are logged in as Brunhilde1984.");
+} else {
+  console.log("Access denied!");
+}
