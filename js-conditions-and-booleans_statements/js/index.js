@@ -30,3 +30,9 @@ if (SUPER_SECRET_PASSWORD === receivedPassword) {
 } else {
   console.log("Access denied!");
 }
+
+if (number === ) {
+    console.log("Welcome! You are logged in as Brunhilde1984.");
+  } else {
+    console.log("Access denied!");
+  }
