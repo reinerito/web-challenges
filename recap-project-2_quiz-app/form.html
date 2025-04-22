@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Form</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="inputForm">
+      <div class="form-group">
+        <label for="question">Your Question</label>
+        <textarea id="question" name="question" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="answer">Your Answer</label>
+        <textarea id="answer" name="answer" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="tag">Tag</label>
+        <input type="text" id="tag" name="tag" required />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="questions"></div>
+    <script>
+      const form = document.getElementById("inputForm");
+      const questions = document.getElementById("questions");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const q = document.createElement("div");
+        const data = new FormData(form);
+        console.log(data);
+        q.textContent = `
+        question: ${data.get("question")}
+        answer: ${data.get("answer")}
+        tag: ${data.get("tag")}
+        `;
+        questions.appendChild(q);
+      });
+    </script>
+  </body>
+</html>
